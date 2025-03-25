@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-image:url(image1.jfif) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card{
+    background-color: rgba(216, 216, 203, 0.315);
+    width: 50vw;
+    height: 26vw;
+    margin-left: 25vw;
+    margin-top: 7vw;
+    border-radius: 60px;
+    overflow: hidden;
+}
+.card #hd{
+  font-size: 4vw;
+  text-align: center;
+  /* background-color: rgb(165, 104, 24); */
+  padding-top: 1.6vw;
+  padding-bottom: 1.5vw;
+  -webkit-text-stroke: 1px #fff;
+}
+.int{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: pink; */
+    height: 8vw;
+    gap: 2.5vw;
+    margin-top: 2vw;
+}
+.int  #hr,#min,#sec{
+    height: 5vw;
+    width: 5vw;
+    font-size: 2vw;
+    padding-left: 1vw;
+    outline: none;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: rgba(55, 60, 124, 0.459);
+}
+#hr::placeholder,#min::placeholder,#sec::placeholder{
+    color: #fff;
+}
+.buttons{
+    height: 8vw;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    /* margin-top: 2vw; */
+}
+.buttons button{
+    height: 4vw;
+    width: 8vw;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 1.9vw;
+    font-size: 2vw;
+}
+.b1{
+   background-color: rgba(118, 163, 50, 0.849);
+}
+.b2{
+    background-color: rgba(168, 68, 68, 0.692);
+}
+.b3{
+    background-color: rgba(146, 107, 33, 0.863);
+}

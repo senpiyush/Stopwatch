@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h1 id="hd">Stopwatch</h1>
+        <div class="int">
+            <input type="text" id="hr" placeholder="hr" value="00"><h1>:</h1>
+            <input type="text" id="min" placeholder="min" value="00"><h1>:</h1>
+            <input type="text" id="sec" placeholder="sec" value="00">
+        </div>
+        <div class="buttons">
+            <button class="b1" onclick="startTimer()">Start</button>
+            <button class="b2" onclick="pauseTimer()">Stop</button>
+            <button class="b3" onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let hr = document.querySelector('#hr');
+        let min = document.querySelector('#min');
+        let sec = document.querySelector('#sec');
+        let timer;
+        let running = false;
+
+        function startTimer() {
+            if (running) return; 
+            running = true;
+            timer = setInterval(() => {
+                let ms = parseInt(sec.value) || 0;
+                let m = parseInt(min.value) || 0;
+                let h = parseInt(hr.value) || 0;
+
+                ms++;
+                if (ms === 100) {
+                    ms = 0;
+                    m++;
+                }
+                if (m === 60) {
+                    m = 0;
+                    h++;
+                }
+
+                sec.value = ms.toString().padStart(2, '0');
+                min.value = m.toString().padStart(2, '0');
+                hr.value = h.toString().padStart(2, '0');
+            }, 10);
+        }
+
+        function pauseTimer() {
+            clearInterval(timer);
+            running = false;
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            running = false;
+            hr.value = "00";
+            min.value = "00";
+            sec.value = "00";
+        }
+    </script>
+</body>
+</html>
